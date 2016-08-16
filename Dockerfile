@@ -69,11 +69,11 @@ RUN chmod +x postInstall.sh
 
 # CMD /opt/letsencrypt/letsencrypt-auto certonly --agree-tos --text --non-interactive --register-unsafely-without-email -a webroot --webroot-path=/var/www/ -d stream.demokratielive.org; service nginx start
 # CMD /opt/letsencrypt/letsencrypt-auto renew; service nginx start
-# CMD service nginx start
+CMD postInstall.sh
 
 ## run interactive
 # CMD service nginx start & /bin/bash
-CMD /bin/bash
+# CMD /bin/bash
 
 
 # Clean // TODO: NOT WORKING
