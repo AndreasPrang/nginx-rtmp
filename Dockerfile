@@ -45,7 +45,7 @@ RUN wget https://raw.github.com/JasonGiedymin/nginx-init-ubuntu/master/nginx -O 
 # Install additional decoder
 RUN apt-get install -y ffmpeg;
 
-ADD nginx.conf /usr/local/nginx/conf/nginx.conf
+ADD nginx.conf /usr/local/nginx/conf/nginx.conf.new
 RUN rm /usr/local/nginx/conf/mime.types
 ADD mime.types /usr/local/nginx/conf/mime.types
 
@@ -64,7 +64,7 @@ EXPOSE 1935
 RUN apt-get install -y augeas-lenses dh-python dialog libaugeas0 libexpat1-dev libffi-dev libmpdec2 libpython-dev libpython-stdlib libpython2.7 libpython2.7-dev libpython2.7-minimal libpython2.7-stdlib libpython3-stdlib libpython3.5-minimal libpython3.5-stdlib mime-support python python-dev python-minimal python-pip-whl python-pkg-resources python-virtualenv python2.7 python2.7-dev python2.7-minimal python3 python3-minimal python3-pkg-resources python3-virtualenv python3.5 python3.5-minimal virtualenv
 
 ## run as daemon
-# RUN /opt/letsencrypt/letsencrypt-auto certonly --agree-tos --text --non-interactive --register-unsafely-without-email -a webroot --webroot-path=/var/www/ -d stream.demokratielive.org;
+
 # CMD /opt/letsencrypt/letsencrypt-auto certonly --agree-tos --text --non-interactive --register-unsafely-without-email -a webroot --webroot-path=/var/www/ -d stream.demokratielive.org; service nginx start
 # CMD /opt/letsencrypt/letsencrypt-auto renew; service nginx start
 # CMD service nginx start
