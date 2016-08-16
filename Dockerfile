@@ -24,7 +24,7 @@ RUN mkdir /tmp/working && cd /tmp/working;\
         tar -zxvf ${nginxVersion}.tar.gz;\
         unzip master.zip;\
         cd ${nginxVersion};\
-        ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-master;\
+        ./configure --with-http_ssl_module --with-http_v2_module --add-module=../nginx-rtmp-module-master;\
         make install clean
 
 RUN rm -r /tmp/working
