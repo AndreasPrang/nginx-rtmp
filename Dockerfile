@@ -65,12 +65,13 @@ RUN apt-get install -y augeas-lenses dh-python dialog libaugeas0 libexpat1-dev l
 
 ## run as daemon
 # RUN /opt/letsencrypt/letsencrypt-auto certonly --agree-tos --text --non-interactive --register-unsafely-without-email -a webroot --webroot-path=/var/www/ -d stream.demokratielive.org;
-CMD /opt/letsencrypt/letsencrypt-auto renew; service nginx start
+# CMD /opt/letsencrypt/letsencrypt-auto certonly --agree-tos --text --non-interactive --register-unsafely-without-email -a webroot --webroot-path=/var/www/ -d stream.demokratielive.org; service nginx start
+# CMD /opt/letsencrypt/letsencrypt-auto renew; service nginx start
 # CMD service nginx start
 
 ## run interactive
 # CMD service nginx start & /bin/bash
-# CMD /bin/bash
+CMD /bin/bash
 
 
 # Clean // TODO: NOT WORKING
